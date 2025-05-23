@@ -39,24 +39,25 @@ body {
 /* Teto do carro */
 .car-top {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 40px;
-    width: 200px;
-    height: 150px;
+    width: 230px;
+    height: 180px;
     background: #ff0000;
     border-radius: 30px 30px 0 0;
-   clip-path: polygon(49% 25%, 68% 26%, 87% 38%, 96% 46%, 96% 62%, 69% 62%, 38% 62%, 2% 61%, 7% 49%, 25% 33%);
+   clip-path: polygon(44.92% 28.7%, 64% 31.57%, 80.52% 41.51%, 89.3% 49%, 100% 62.25%, 69% 62%, 38% 62%, 1% 58.26%, 10.38% 45.65%, 23.27% 33.83%);
 }
 
 .windshield {
   position: absolute;
-  bottom: 30px;
-  left: 40px;
-  width: 180px;
-  height: 130px;
+  bottom: 50px;
+  left: 50px;
+  width: 200px;
+  height: 150px;
   background: rgba(135, 206, 250, 0.9);
   border-radius: 30px 30px 0 0;
-  clip-path: polygon(50% 25%, 50% 33%, 50% 45%, 50% 54%, 50% 62%, 38% 62%, 2% 61%, 7% 49%, 25% 33%);
+ clip-path: polygon(42.79% 38.08%, 56.49% 38.08%, 70.65% 41.51%, 79.68% 49.87%, 88.53% 62%, 69% 62%, 38% 62%, 12.44% 62%, 19.35% 49.87%, 30.53% 41.51%);
+
   z-index: 1;
 }
 
