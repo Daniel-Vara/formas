@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.car-container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+.car {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Corpo principal do carro */
+.car-body {
+    position: absolute;
+    bottom: 30px;
+    width: 350px;
+    height: 80px;
+    background: #ff0000;
+    border-radius: 20px 80px 20px 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Teto do carro */
+.car-top {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 200px;
+    height: 150px;
+    background: #ff0000;
+    border-radius: 30px 30px 0 0;
+   clip-path: polygon(49% 25%, 68% 26%, 87% 38%, 96% 46%, 96% 62%, 69% 62%, 38% 62%, 2% 61%, 7% 49%, 25% 33%);
+}
+
+.windshield {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  width: 180px;
+  height: 130px;
+  background: rgba(135, 206, 250, 0.9);
+  border-radius: 30px 30px 0 0;
+  clip-path: polygon(50% 25%, 50% 33%, 50% 45%, 50% 54%, 50% 62%, 38% 62%, 2% 61%, 7% 49%, 25% 33%);
+  z-index: 1;
+}
+
+.windshield::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+  clip-path: inherit;
+  background: none;
+  border: 3px solid black;
+  box-sizing: border-box;
+  z-index: 10z;
+}
+
+
+/* Rodas */
+.wheel {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #222;
+    border-radius: 50%;
+    bottom: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.wheel::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #444;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.wheel.front-left {
+    left: 50px;
+}
+
+.wheel.front-right {
+    left: 50px;
+    bottom: 10px;
+}
+
+.wheel.rear-left {
+    right: 50px;
+}
+
+.wheel.rear-right {
+    right: 50px;
+    bottom: 10px;
+}
