@@ -1,118 +1,155 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f0f0f0;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.car-container {
-    position: relative;
-    width: 400px;
-    height: 200px;
-}
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+    }
 
-.car {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+    .car-container {
+      position: relative;
+      width: 400px;
+      height: 200px;
+    }
 
-/* Corpo principal do carro */
-.car-body {
-    position: absolute;
-    bottom: 30px;
-    width: 350px;
-    height: 80px;
-    background: #ff0000;
-    border-radius: 20px 80px 20px 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-}
+    .car {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-/* Teto do carro */
-.car-top {
-    position: absolute;
-    bottom: 20px;
-    left: 40px;
-    width: 230px;
-    height: 180px;
-    background: #ff0000;
-    border-radius: 30px 30px 0 0;
-   clip-path: polygon(44.92% 28.7%, 64% 31.57%, 80.52% 41.51%, 89.3% 49%, 100% 62.25%, 69% 62%, 38% 62%, 1% 58.26%, 10.38% 45.65%, 23.27% 33.83%);
-}
+    .car-body {
+      position: absolute;
+      bottom: 30px;
+      width: 350px;
+      height: 80px;
+      background: #ff0000;
+      border-radius: 20px 80px 20px 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
 
-.windshield {
+   
+    .car-top {
+      position: absolute;
+      bottom: 30px;
+      left: 40px;
+      width: 230px;
+      height: 180px;
+      background: #ff0000;
+      border-radius: 30px 30px 0 0;
+      clip-path: polygon(
+        33.63% 34.99%,
+        47.24% 33.6%,
+        60.85% 34.99%,
+        76.01% 42.88%,
+        94.68% 56.11%,
+        47.24% 56.11%,
+        3.74% 56.11%,
+        16.8% 42.88%
+      );
+    }
+
+   
+    .windshield {
+      position: absolute;
+      bottom: 2px;
+      left: 20px;
+      width: 260px;
+      height: 220px;
+      background: rgba(135, 206, 250, 0.9);
+      border-radius: 30px 30px 0 0;
+      clip-path: polygon(
+        34.85% 38.24%,
+        47.85% 36.62%,
+        60.85% 38.24%,
+        75.8% 47.18%,
+        85.26% 56.11%,
+        47.24% 56.11%,
+        11.72% 56.11%,
+        21.42% 47.18%
+      );
+      z-index: 1;
+    }
+
+    .windshield::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px 30px 0 0;
+      clip-path: inherit;
+      background: none;
+      border: 3px solid black;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+
+    .wheel {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #222;
+      border-radius: 50%;
+      bottom: 0;
+    }
+
+    .wheel::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #444;
+      border-radius: 50%;
+      top: 10px;
+      left: 10px;
+    }
+
+    .wheel.front-left {
+      left: 270px;
+    }
+
+    .wheel.front-right {
+      display: none; 
+    }
+
+    .wheel.rear-left {
+      left: 40px;
+    }
+
+    .wheel.rear-right {
+      display: none; 
+    }
+
+  
+  .headlight {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  width: 200px;
-  height: 150px;
-  background: rgba(135, 206, 250, 0.9);
-  border-radius: 30px 30px 0 0;
- clip-path: polygon(42.79% 38.08%, 56.49% 38.08%, 70.65% 41.51%, 79.68% 49.87%, 88.53% 62%, 69% 62%, 38% 62%, 12.44% 62%, 19.35% 49.87%, 30.53% 41.51%);
-
-  z-index: 1;
+  width: 20px;
+  height: 10px; 
+  background: yellow;
+  border-radius: 5px; 
+  top: 125px;
+  left: 324px; 
+  box-shadow: 0 0 10px yellow;
+  z-index: 2;
+ 
 }
 
-.windshield::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px 30px 0 0;
-  clip-path: inherit;
-  background: none;
-  border: 3px solid black;
-  box-sizing: border-box;
-  z-index: 10z;
-}
-
-
-/* Rodas */
-.wheel {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: #222;
-    border-radius: 50%;
-    bottom: 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-}
-
-.wheel::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: #444;
-    border-radius: 50%;
-    top: 10px;
-    left: 10px;
-}
-
-.wheel.front-left {
-    left: 50px;
-}
-
-.wheel.front-right {
-    left: 50px;
-    bottom: 10px;
-}
-
-.wheel.rear-left {
-    right: 50px;
-}
-
-.wheel.rear-right {
-    right: 50px;
-    bottom: 10px;
-}
+   
+    .exhaust {
+      position: absolute;
+      width: 20px;
+      height: 12px;
+      background: #444;
+      bottom: 43px;
+      left: -10px;
+      border-radius: 2px;
+    }
